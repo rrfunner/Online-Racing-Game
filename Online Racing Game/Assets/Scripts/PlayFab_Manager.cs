@@ -4,6 +4,7 @@ using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayFab_Manager : MonoBehaviour
 {
@@ -17,11 +18,13 @@ public class PlayFab_Manager : MonoBehaviour
     public GameObject DPNamePannel;
     public Text DisplayName;
     public InputField DPName;
+    
     public void Start()
     {
        
         CreatePannel.SetActive(false); 
         DPNamePannel.SetActive(false);
+     
         //Note: Setting title Id here can be skipped if you have set the value in Editor Extensions already.
         if (string.IsNullOrEmpty(PlayFabSettings.TitleId))
         {
@@ -64,6 +67,8 @@ public class PlayFab_Manager : MonoBehaviour
         LoginPannel.SetActive(false);
         CreatePannel.SetActive(false);
         DPNamePannel.SetActive(false);
+        SceneManager.LoadScene("1");
+        
     }
 
     private void OnRegisterSuccess(RegisterPlayFabUserResult result)
@@ -82,7 +87,7 @@ public class PlayFab_Manager : MonoBehaviour
         CreatePannel.SetActive(false);
         LoginPannel.SetActive(true);
         DPNamePannel.SetActive(false);
-
+     
     }
     private void OnLoginFailure(PlayFabError error)
     {
@@ -106,7 +111,7 @@ public class PlayFab_Manager : MonoBehaviour
         DPNamePannel.SetActive(true);
         CreatePannel.SetActive(false);
         LoginPannel.SetActive(false);
-
+       
     }
     public void UpdateName()
     {
