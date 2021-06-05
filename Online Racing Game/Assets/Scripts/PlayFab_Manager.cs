@@ -67,8 +67,7 @@ public class PlayFab_Manager : MonoBehaviour
         LoginPannel.SetActive(false);
         CreatePannel.SetActive(false);
         DPNamePannel.SetActive(false);
-        SceneManager.LoadScene("1");
-        
+        SceneManager.LoadScene(1);
     }
 
     private void OnRegisterSuccess(RegisterPlayFabUserResult result)
