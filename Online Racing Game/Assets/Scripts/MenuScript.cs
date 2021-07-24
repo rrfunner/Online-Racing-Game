@@ -40,8 +40,8 @@ public class MenuScript : Photon.PunBehaviour
     {
         lobbycam.SetActive(false);
         lobbyUI.SetActive(false);
-
-        GameObject car2 = PhotonNetwork.Instantiate("Car1", spawn1.position, spawn1.rotation, 0);
+        Debug.Log("CarSwitch spawm");
+        GameObject mycar = PhotonNetwork.Instantiate( "Car3", spawn1.position, spawn1.rotation, 0);
     }
     public override void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
     {
